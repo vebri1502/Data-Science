@@ -1,0 +1,86 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "description": "Return prediction",
+    "title": "PlumberPOSApp",
+    "version": "1.0.1"
+  },
+  "paths": {
+    "/plothp": {
+      "get": {
+        "summary": "Plot a histogram of the gross horsepower",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Default response."
+          }
+        },
+        "parameters": []
+      }
+    },
+    "/hitung": {
+      "post": {
+        "summary": "Menampilkan hasil prediksi",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Default response."
+          }
+        },
+        "parameters": [
+          {
+            "name": "capital_price",
+            "description": "Harga Market",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "actual_cap",
+            "description": "Kapitalisasi sebenarnya",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "total_transactions",
+            "description": "Total Transaksi",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    }
+  }
+}
